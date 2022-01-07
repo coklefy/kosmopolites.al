@@ -1,16 +1,26 @@
-<h1 id="newspaper-title">{{ title }}</h1>
+<div class="container-fluid m-0 test">
+  <div class="row h-20 test">
+    <!-- Title row-->
+    <app-header></app-header>
 
-<app-navbar></app-navbar>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <p>1 of three columns</p>
-    </div>
-    <div class="col-sm">
-      <p>2 of three columns</p>
-    </div>
-    <div class="col-sm">
-      <p>3 of three columns</p>
-    </div>
+    <!-- Navbar row-->
+    <app-navbar></app-navbar>
+
+    <div class="row h-30 m-0 test">Scrollable row</div>
   </div>
+
+  <div class="row h-70 test">
+    <div class="col-sm-3 h-100 test">
+      <div class="row h-50">
+        <div class="col-sm test">Up section</div>
+      </div>
+      <div class="row h-50">
+        <div class="col-sm test">Down section</div>
+      </div>
+    </div>
+    <div class="col-sm-6 test">Main Comuln</div>
+    <div class="col-sm-3 test">Right Column</div>
+  </div>
+
+  <div class="row h-10 test">Footer</div>
 </div>

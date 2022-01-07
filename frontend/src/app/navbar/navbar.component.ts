@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StaticProvider } from '../StaticProvider';
 
 @Component({
   selector: 'app-navbar',
@@ -6,24 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  itemsDenomination: Array<String> = [];
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fetchItemsDenomination();
+  }
 
-  /** TODO: to be refactored with enumeration */
-  navbarItems = [
-    'Home',
-    'Politics',
-    'Business',
-    'Tech',
-    'Science',
-    'Health',
-    'Sports',
-    'Arts',
-    'Food',
-    'LifeStyle',
-    'Education',
-    'Travel',
-    'Entertainment',
-  ];
+  private fetchItemsDenomination() {
+    new StaticProvider().navbarItems.forEach((item) =>
+      this.itemsDenomination.push(item.getDenominaiton())
+    );
+  }
 }
